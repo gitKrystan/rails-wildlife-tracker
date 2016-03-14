@@ -1,5 +1,4 @@
 class RegionsController < ApplicationController
-
   def index
     @regions = Region.all
   end
@@ -41,8 +40,8 @@ class RegionsController < ApplicationController
   end
 
   private
+
   def region_params
     params.require(:region).permit(:name)
   end
-
 end
