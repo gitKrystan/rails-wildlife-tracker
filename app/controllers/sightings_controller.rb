@@ -1,8 +1,7 @@
 class SightingsController < ApplicationController
-
   def index
     @sightings = Sighting.all
-    @region_options_array = Region.all.map {|r| [r.name, r.id] }
+    @region_options_array = Region.all.map { |r| [r.name, r.id] }
   end
 
   def new
@@ -43,8 +42,8 @@ class SightingsController < ApplicationController
   end
 
   private
-    def sighting_params
-      params.require(:sighting).permit(:date, :latitude, :longitude, :region_id)
-    end
 
+  def sighting_params
+    params.require(:sighting).permit(:date, :latitude, :longitude, :region_id)
+  end
 end
